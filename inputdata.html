@@ -46,9 +46,7 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("myDatabaseName");
     var entryCollection = db.collection("entryCollection");
-    entryCollection.save();
-    entryCollection.load();
-    entryCollection.find();
+    
     
     function addToEntry(){
       entryCollection.insert({
