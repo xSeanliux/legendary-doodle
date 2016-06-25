@@ -78,6 +78,14 @@
      
     }
     
+    function writeOnTable(){
+      $("#stuffBody").html("");
+      for(var i = 0; i < entryCollection.length; i++;){
+          $("#stuffBody").append("<tr><td>entryCollection[i].date</td><td>entryCollection[i].amount</td><td>entryCollection[i].type</td><td>entryCollection[i].name</td></tr>");
+      
+      }
+    }
+    
   </script>
 </body>
 
