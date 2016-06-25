@@ -51,7 +51,7 @@
     entryCollection.find();
     
     function addToEntry(){
-      entryCollection.push({
+      entryCollection.insert({
         amount: $("#amount").val(),
         name: $("#name").val(),
         date: $("#date").val(),
