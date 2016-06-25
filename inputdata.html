@@ -21,8 +21,8 @@
       <label for="amount">Amount of money</label>
       <input type="number" class="form-control" id="amount"></number>
       
-      <label for="sel1">Type of transaction: </label>
-      <select class="form-control" id="sel1">
+      <label for="type">Type of transaction: </label>
+      <select class="form-control" id="type">
         <option>交通</option>
         <option>吃喝</option>
         <option>玩樂</option>
@@ -37,7 +37,7 @@
       <label for="date">Date of transaction:</label>
       <input type="date" class="form-control" id="date">
       
-      
+      <button type="btn btn-submit">Add</button>
     </form>
   </div>
   
@@ -46,6 +46,16 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("myDatabaseName");
     var entryCollection = db.collection("entryCollection");
+    
+    function addToEntry(){
+      entryCollection.push({
+        amount: $("#amount").val(),
+        name: $("#name").val(),
+        date: $("#date").val(),
+        type: $("#type").val()
+        
+      })
+    }
     
   </script>
 </body>
