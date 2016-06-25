@@ -12,7 +12,7 @@
 <body>
   
   
-  <h1 align="center">Prototype Input v. 0.0.0.4</h1>
+  <h1 align="center">Prototype Input v. 0.0.1.0</h1>
   </p></p>
   <div class="col-xs-3" align="center">
     <form>
@@ -46,6 +46,9 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("myDatabaseName");
     var entryCollection = db.collection("entryCollection");
+    entryCollection.save();
+    entryCollection.load();
+    entryCollection.find();
     
     function addToEntry(){
       entryCollection.push({
@@ -55,6 +58,7 @@
         type: $("#type").val()
         
       })
+     
     }
     
   </script>
