@@ -68,6 +68,7 @@
     
     
     function addToEntry(){
+      console.log("Add button clicked")
       entryCollection.insert({
         amount: $("#amount").val(),
         name: $("#name").val(),
@@ -86,11 +87,11 @@
       }
     }
     
-    $("#submitbtn").on("click",function(){
+    $("body #submitbtn").on("click",function(){
       console.log("Clicked Add button")
       addToEntry();
       writeOnTable();
-    })
+    });
     
   </script>
 </body>
