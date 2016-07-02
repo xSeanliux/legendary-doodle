@@ -42,7 +42,7 @@
       total = 0;
       var table = entryCollection.find();
       for(var i = 0; i < table.length-1; i++){
-        total += table[i].amount;
+        total += parseInt(table[i].amount);
       }
       $("#total").html("Total:  "+total);
       
