@@ -25,8 +25,8 @@ var total = 0;
       }
     }
     
-    $("body #submitbtn").on("click",function(){
+    function submitAll(){
       console.log("Clicked Add button")
       addToEntry();
       writeOnTable();
-    });
+    };
