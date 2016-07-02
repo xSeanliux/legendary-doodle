@@ -12,7 +12,7 @@
 <body>
   
   
-  <h1 align="center">Prototype Input v. 0.0.1.5</h1>
+  <h1 align="center">Prototype Input v. 0.0.1.6</h1>
   </p></p>
   <div class="col-xs-3" align="center">
     <form>
@@ -82,7 +82,7 @@
     
     function writeOnTable(){
       $("#stuffBody").html("");
-      for(var i = 0; i < entryCollection.length; i++){
+      for(var i = 0; i < entryCollection.count(); i++){
           $("#stuffBody").append("<tr><td>entryCollection[i].date</td><td>entryCollection[i].amount</td><td>entryCollection[i].type</td><td>entryCollection[i].name</td></tr>");
       
       }
