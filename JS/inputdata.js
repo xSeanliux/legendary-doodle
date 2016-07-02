@@ -13,6 +13,7 @@ var total = 0;
         type: $("#type").val()
         
       });
+      entryCollection.save();
      
     }
     
