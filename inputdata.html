@@ -62,9 +62,13 @@
   </div>
   
   <script>
-    entryCollection.load();
-    entryCollection.save();
-    writeOnTable();
+    
+    collection.load(function (err) {
+    if (!err) {
+        entryCollection.save();
+        writeOnTable();
+    }
+});
   </script>  
 
 </body>
