@@ -24,10 +24,12 @@ var total = 0;
           $("#stuffBody").append("<tr><td>"+table[i].date+"</td><td>"+table[i].amount+"</td><td>"+table[i].type+"</td><td>"+table[i].name+"</td></tr>");
       
       }
+      entryCollection.save();
     }
     
     function submitAll(){
       
       addToEntry();
       writeOnTable();
+      entryCollection.save();
     };
