@@ -34,8 +34,10 @@
   
   
   <script>
-    entryCollection.load();
-    entryCollection.find();
+    
+    
+    
+    
     
     var total = 0;  
     function calculateTotal(){
@@ -48,9 +50,14 @@
       
     }
     
-    writeOnTable();
-    calculateTotal();
-    
+   
+    entryCollection.load(function (err) {
+    if (!err) {
+        entryCollection.save();
+        writeOnTable();
+        calculateTotal();
+    }
+  });
     
     
   </script>
