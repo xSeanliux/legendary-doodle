@@ -50,11 +50,13 @@
       
       
       
-      if(total =< 0){
+      if(total < 0){
         $("#total").html("<h3 style='color:red'>"+total+"</h3>");
         
-      } else{
+      } else if(total >0){
         $("#total").html("<h3 style='color:green'>"+total+"</h3>");
+      }else{
+        $("#total").html("<h3 style='color:black'>"+total+"</h3>");
       }
       
       
