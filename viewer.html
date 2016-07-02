@@ -43,7 +43,7 @@
     function calculateTotal(){
       total = 0;
       var table = entryCollection.find();
-      for(var i = 0; i < table.length-1; i++){
+      for(var i = 0; i < table.length; i++){
         total += parseInt(table[i].amount);
       }
       $("#total").html("Total:  "+total);
