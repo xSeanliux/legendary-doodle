@@ -11,10 +11,43 @@ html>
 
 <body>
   
+  <h1 id= "total"> </h1>
+  <div class="col-x-9" align="right">
+    <table class="table table-striped" id="stuffTable">
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody id="stuffBody">
+      
+    </tbody>
+      
+      
+    </table>
+  </div>
+  
   
   <h1 align="center">Prototype Viewer v. 0.0.0.1</h1>
   <script>
+  
     addToEntry();
+    var total = 0;  
+    function calculateTotal(){
+      total = 0;
+      var table = entryCollection.find();
+      for(var i = 0; i < table.length-1; i++){
+        total += table[i].amount;
+      }
+      $("#total").html(total);
+      
+    }
+    
+    
+    
   </script>
   
   
