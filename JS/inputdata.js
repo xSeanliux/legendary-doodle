@@ -5,7 +5,7 @@ var total = 0;
     
     
     function addToEntry(){
-      console.log("Add button clicked")
+    
       entryCollection.insert({
         amount: $("#amount").val(),
         name: $("#name").val(),
@@ -27,7 +27,7 @@ var total = 0;
     }
     
     function submitAll(){
-      console.log("Clicked Add button")
+      
       addToEntry();
       writeOnTable();
     };
