@@ -1,4 +1,5 @@
-var total = 0;
+    var version = 0.1
+    var total = 0;
     var fdb = new ForerunnerDB();
     var db = fdb.db("myDatabaseName");
     var entryCollection = db.collection("entryCollection");
