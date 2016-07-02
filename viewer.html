@@ -12,7 +12,7 @@
 
 <body>
   <h1 align="center">Prototype Viewer v. 0.0.1.3</h1>
-  <h3 id= "total"> </h1>
+  <h3 id= "total">Total: 0 </h1>
   <div class="col-x-9" align="right">
     <table class="table table-striped" id="stuffTable">
       <thead>
@@ -36,7 +36,7 @@
   <script>
     entryCollection.load();
     entryCollection.find();
-    writeOnTable();
+    
     var total = 0;  
     function calculateTotal(){
       total = 0;
@@ -47,6 +47,9 @@
       $("#total").html("Total:  "+total);
       
     }
+    
+    writeOnTable();
+    calculateTotal();
     
     
     
