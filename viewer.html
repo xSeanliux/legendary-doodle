@@ -75,7 +75,7 @@
   
   $("#latest10").on(click,function(){
     var latestTable = entryCollection.find({
-      {},
+      
       {
         $orderby:{date:-1},
         $limit: 10
