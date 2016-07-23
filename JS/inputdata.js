@@ -28,6 +28,18 @@
       entryCollection.save();
     }
     
+    function printTable(args){
+      var table = entryCollection.find(args);
+      $("#stuffBody").html("");
+      for(var i = 0; i < table.length; i++){
+          $("#stuffBody").append("<tr><td>"+table[i].date+"</td><td>"+table[i].amount+"</td><td>"+table[i].type+"</td><td>"+table[i].name+"</td></tr>");
+      
+      }
+      entryCollection.save();
+    }
+    
+    
+    
     function submitAll(){
       
       addToEntry();
