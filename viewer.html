@@ -74,7 +74,7 @@
   
   
   $("#latest10").on(click,function(){
-    var latestEntries = entryCollection.find({
+    printOnTable({
       {},
       {
         $orderby:-1,
@@ -85,7 +85,7 @@
     });
     
     
-  })
+  });
     
     
   </script>
