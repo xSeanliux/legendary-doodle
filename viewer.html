@@ -73,7 +73,7 @@
   });
   
   function latest10(){
-    var latestTable = entryCollection.find({
+    var latestTable = entryCollection.find(
       {},
       {
         $orderby:{date:-1},
@@ -81,7 +81,7 @@
       }
       
       
-    });
+    );
     
     printTable(latestTable);
   }
