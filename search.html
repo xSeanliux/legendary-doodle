@@ -51,8 +51,17 @@
   
   <script>
     var version = "Prototype Search Machine v.0.0.2";
-    
     $(".version").html(version);
+    
+    entryCollection.load(function (err) {
+    if (!err) {
+        entryCollection.save();
+        
+    }
+});
+    
+    
+    
   
     $("#this_month").on("click", function(){
       var date = new Date();
