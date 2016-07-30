@@ -5,6 +5,26 @@
     var entryCollection = db.collection("entryCollection");
     
     
+    function dateToString(var date){
+        var result;
+        if(date.getMonth() >= 10){
+        if(date.getDate() >= 10){
+          var result = date.getFullYear().toString()+"-"+date.getMonth().toString()+"-"+date.getDate().toString();
+        } else {
+          var result = date.getFullYear().toString()+"-"+date.getMonth().toString()+"-0"+date.getDate().toString();
+        }
+      } else {
+        if(date.getDate() >= 10){
+          var result = date.getFullYear().toString()+"-0"+date.getMonth().toString()+"-"+date.getDate().toString();
+        } else {
+          var result = date.getFullYear().toString()+"-0"+date.getMonth().toString()+"-0"+date.getDate().toString();
+        }
+        
+      }
+      
+      return result;
+    }
+    
     function addToEntry(){
     
       entryCollection.insert({
