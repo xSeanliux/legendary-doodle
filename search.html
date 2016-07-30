@@ -68,15 +68,15 @@
       
       if(_endDate.getMonth >= 10){
         if(_endDate.getDate >= 10){
-          var endDate = _endDate.getFullYear.toString()+"-"+_endDate.getMonth+"-"+_endDate.getDate;
+          var endDate = _endDate.getFullYear().toString()+"-"+_endDate.getMonth().toString()+"-"+_endDate.getDate().toString();
         } else {
-          var endDate = _endDate.getFullYear.toString()+"-"+_endDate.getMonth+"-0"+_endDate.getDate;
+          var endDate = _endDate.getFullYear().toString()+"-"+_endDate.getMonth().toString()+"-0"+_endDate.getDate().toString();
         }
       } else {
         if(_endDate.getDate >= 10){
-          var endDate = _endDate.getFullYear.toString()+"-0"+_endDate.getMonth+"-"+_endDate.getDate;
+          var endDate = _endDate.getFullYear().toString()+"-0"+_endDate.getMonth().toString()+"-"+_endDate.getDate().toString();
         } else {
-          var endDate = _endDate.getFullYear.toString()+"-0"+_endDate.getMonth+"-0"+_endDate.getDate;
+          var endDate = _endDate.getFullYear().toString()+"-0"+_endDate.getMonth().toString()+"-0"+_endDate.getDate().toString();
         }
         
       }
