@@ -27,10 +27,11 @@
   
   <div class="col-x-5" align = "centre">
    <label for="date">Starting Date</label>
-   <input type="startDate" class="form-control" id="startDate">
+   <input type="date" class="form-control" id="startDate">
   
    <label for="endDate">End Date</label>
    <input type="date" class="form-control" id="endDate">
+   
    <button type="button" class="btn btn-default" id="dateSearchSubmit">Sübmit</button>
     
   </div>
@@ -60,7 +61,7 @@
   </div>
   
   <script>
-    var version = "Prototype Search Machine v.0.0.3";
+    var version = "Prototype Search Machine v.0.0.4";
     $(".version").html(version);
     
     entryCollection.load(function (err) {
