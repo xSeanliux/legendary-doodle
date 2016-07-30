@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Prototype Search Machine v.0.0.2</title>
+  <title class = "version">Prototype Search Machine v.0.0.2</title>
   <script src="JS/jQuery.js"></script>
   <script src="JS/Bootstrap.js"></script>
   <script src="JS/ForeRunnerDB.js"></script>
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1 align="center">Prototype Viewer v. 0.0.1.7</h1>
+  <h1 align="center" class = "version">Prototype Viewer v. 0.0.1.7</h1>
   
   <div class="col-x-3" align="centre">
   <button type="button" class="btn btn-default" id="this_month">This Month</button>
@@ -50,6 +50,10 @@
   </div>
   
   <script>
+    var version = "Prototype Search Machine v.0.0.2";
+    
+    $(".version").html(version);
+  
     $("#this_month").on("click", function(){
       var date = new Date();
       var currentMonth = date.getMonth() + 1;
@@ -66,14 +70,14 @@
       
       var _endDate =  new Date(currentYear, currentMonth+1, 0);
       
-      if(_endDate.getMonth() > 10){
-        if(_endDate.getDate() > 10){
+      if(_endDate.getMonth() >= 10){
+        if(_endDate.getDate() >= 10){
           var endDate = _endDate.getFullYear().toString()+"-"+_endDate.getMonth().toString()+"-"+_endDate.getDate().toString();
         } else {
           var endDate = _endDate.getFullYear().toString()+"-"+_endDate.getMonth().toString()+"-0"+_endDate.getDate().toString();
         }
       } else {
-        if(_endDate.getDate() > 10){
+        if(_endDate.getDate() >= 10){
           var endDate = _endDate.getFullYear().toString()+"-0"+_endDate.getMonth().toString()+"-"+_endDate.getDate().toString();
         } else {
           var endDate = _endDate.getFullYear().toString()+"-0"+_endDate.getMonth().toString()+"-0"+_endDate.getDate().toString();
