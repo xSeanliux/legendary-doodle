@@ -14,7 +14,7 @@
   <h1 align="center">Prototype Viewer v. 0.0.1.7</h1>
   
   <div class="col-x-3" align="centre">
-  <button type="button" class="btn btn-default">This Month</button>
+  <button type="button" class="btn btn-default" id="this_month">This Month</button>
   <button type="button" class="btn btn-default">Default</button>
   <button type="button" class="btn btn-default">Default</button>
   </div>
@@ -49,7 +49,46 @@
     </table>
   </div>
   
-  
+  <script>
+    $("#this_month").on("click", function(){
+      var date = new Date();
+      var currentMonth = date.getMonth() + 1;
+      var currentYear = date.getFullYear();
+      
+      if(currentMonth >= 10){
+        var startDate = currentYear.toString()+"-"+currentMonth.toString()+"-01";
+      } else {
+        var startDate = currentYear.toString()+"-0"+currentMonth.toString()+"-01";
+      }
+      //startDate done. 
+      
+      
+      
+      var _endDate =  new Date(currentYear, currentMonth, 0);
+      
+      if(_endDate.getMonth >= 10){
+        if(_endDate.getDate >= 10){
+          var endDate = _endDate.getFullYear.toString()+"-"+_endDate.getMonth+"-"+_endDate.getDate;
+        } else {
+          var endDate = _endDate.getFullYear.toString()+"-"+_endDate.getMonth+"-0"+_endDate.getDate;
+        }
+      } else {
+        if(_endDate.getDate >= 10){
+          var endDate = _endDate.getFullYear.toString()+"-0"+_endDate.getMonth+"-"+_endDate.getDate;
+        } else {
+          var endDate = _endDate.getFullYear.toString()+"-0"+_endDate.getMonth+"-0"+_endDate.getDate;
+        }
+        
+      }
+      
+      searchByDate(startDate, endDate);
+      
+      
+      
+    })
+    
+    
+  </script>
   
 
 </body>
