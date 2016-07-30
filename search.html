@@ -114,13 +114,7 @@
     });
     
     $("#dateSearchSubmit").on("click", function(){
-      var _startDate = $("#startDate").val();
-      var _endDate = $("#endDate").val();
-      
-      var startDate = dateToString(_startDate);
-      var endDate = dateToString(_endDate);
-      
-      findByDate(startDate, endDate);
+      findByDate($("#startDate").val(), $("#endDate").val());
       
     });
     
