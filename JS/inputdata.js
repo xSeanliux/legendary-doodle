@@ -5,7 +5,7 @@
     var entryCollection = db.collection("entryCollection");
     
     
-    function dateToString(var date){
+    function dateToString(date){
         var result;
         if(date.getMonth() >= 10){
         if(date.getDate() >= 10){
