@@ -19,16 +19,21 @@
   <button type="button" class="btn btn-default">Default</button>
   </div>
   
-  <label for="startDate">Starting Date</label>
-  <input type="startDate" class="form-control" id="startDate">
   
-  <label for="endDate">End Date</label>
-  <input type="endDate" class="form-control" id="endDate">
+  <div class = "col-x-5" align="centre">
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-default">Default</button>
+  </div>
   
-  <div class="col-x-5" align="centre">
-  <button type="button" class="btn btn-default">Default</button>
-  <button type="button" class="btn btn-default">Default</button>
-  <button type="button" class="btn btn-default">Default</button>
+  <div class="col-x-5" align = "centre">
+   <label for="startDate">Starting Date</label>
+   <input type="startDate" class="form-control" id="startDate">
+  
+   <label for="endDate">End Date</label>
+   <input type="endDate" class="form-control" id="endDate">
+   <button type="button" class="btn btn-default" id="dateSearchSubmit">Sübmit</button>
+    
   </div>
   
   
@@ -105,7 +110,18 @@
       
       
       
-    })
+    });
+    
+    $("#dateSearchSubmit").on("click", function(){
+      var _startDate = $("#startDate").val();
+      var _endDate = $("#endDate").val();
+      
+      var startDate = dateToString(_startDate);
+      var endDate = dateToString(_endDate);
+      
+      findByDate(startDate, endDate);
+      
+    });
     
     
   </script>
