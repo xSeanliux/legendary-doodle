@@ -38,6 +38,21 @@
       entryCollection.save();
     }
     
+    function findByDate(firstDate, secondDate){
+        var table = entryCollection.find({
+            date: {
+                 "$gt": firstDate,
+                "$lt": secondDate
+            }   
+                
+            
+        });
+        
+        printTable(table);
+        
+        
+    }
+    
     
     
     function submitAll(){
