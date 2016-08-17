@@ -125,8 +125,16 @@
       
     });
     
-    $("#dateSearchSubmit").on("click", function(){
-      findByDate($("#startDate").val(), $("#endDate").val());
+    $("#by_type").on("click", function(){
+      var table; 
+      if(var checked = $("#type_checkbox:checkbox:checked").length > 0){ //If any checkboxes are checked
+        for(var i = 0; i < checked.length; i++){
+          table += studentCollection.find({
+            type: checked[i];
+          })
+          printTable(table);
+        }
+      }
       
     });
     
