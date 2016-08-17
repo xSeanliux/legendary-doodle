@@ -15,7 +15,14 @@
   
   <div class="col-x-5" align="centre">
   <button type="button" class="btn btn-default" id="this_month">This Month</button>
-  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-default" id="by_type">By Type</button>
+  <div class = "type_checkbox">
+    <label><input type="checkbox" value="eat">吃喝</label>
+    <label><input type="checkbox" value="fun">玩樂</label>
+    <label><input type="checkbox" value="move">交通</label>
+    <label><input type="checkbox" value="learn">學業</label>
+    <label><input type="checkbox" value="other">其他</label>
+  </div>
   <button type="button" class="btn btn-default">Default</button>
   </div>
   
@@ -118,6 +125,10 @@
       
     });
     
+    $("#dateSearchSubmit").on("click", function(){
+      findByDate($("#startDate").val(), $("#endDate").val());
+      
+    });
     
   </script>
   
