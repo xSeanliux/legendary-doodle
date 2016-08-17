@@ -130,7 +130,7 @@
       if( checked.length > 0){ //If any checkboxes are checked
         for(var i = 0; i < checked.length; i++){
           table += studentCollection.find({
-            type: checked[i];
+            type: checked[i]
           })
           printTable(table);
         }
