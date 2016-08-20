@@ -126,7 +126,7 @@
     
     $("#by_type").on("click", function(){
       var table, checked = $(".typeCheck:checkbox:checked"); 
-      
+      $('#stuffBody').html(" ");
         for(var i = 0; i < checked.length; i++){
           table = entryCollection.find({
             type: checked[i].value
