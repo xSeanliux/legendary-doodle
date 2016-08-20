@@ -105,10 +105,10 @@
         ctx.beginPath();
         ctx.moveTo(canvas.width / 2, canvas.height / 2);
         // Arc Parameters: x, y, radius, startingAngle (radians), endingAngle (radians), antiClockwise (boolean)
-        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, lastend, lastend + (Math.PI * 2 * (data[i] / myTotal)), false);
+        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, lastend, lastend + (Math.PI * 2 * (typeArray[i] / myTotal)), false);
         ctx.lineTo(canvas.width / 2, canvas.height / 2);
         ctx.fill();
-        lastend += Math.PI * 2 * (data[i] / myTotal);
+        lastend += Math.PI * 2 * (typeArray[i] / myTotal);
       }
       
       
