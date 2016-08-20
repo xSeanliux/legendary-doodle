@@ -16,12 +16,12 @@
   <div class="col-x-5" align="centre">
   <button type="button" class="btn btn-default" id="this_month">This Month</button>
   <button type="button" class="btn btn-default" id="by_type">By Type</button>
-  <div class = "type_checkbox">
-    <label><input type="checkbox" value="eat">吃喝</label>
-    <label><input type="checkbox" value="fun">玩樂</label>
-    <label><input type="checkbox" value="move">交通</label>
-    <label><input type="checkbox" value="learn">學業</label>
-    <label><input type="checkbox" value="other">其他</label>
+  <div id = "type_checkbox">
+    <label><input type="checkbox" value="eat" class = "typeCheck">吃喝</label>
+    <label><input type="checkbox" value="fun" class = "typeCheck">玩樂</label>
+    <label><input type="checkbox" value="move" class = "typeCheck">交通</label>
+    <label><input type="checkbox" value="learn" class = "typeCheck">學業</label>
+    <label><input type="checkbox" value="other" class = "typeCheck">其他</label>
   </div>
   <button type="button" class="btn btn-default">Default</button>
   </div>
@@ -126,7 +126,7 @@
     });
     
     $("#by_type").on("click", function(){
-      var table, checked = $("#type_checkbox:checkbox:checked"); 
+      var table, checked = $(".typeCheck:checkbox:checked"); 
       if( checked.length > 0){ //If any checkboxes are checked
         for(var i = 0; i < checked.length; i++){
           table += studentCollection.find({
