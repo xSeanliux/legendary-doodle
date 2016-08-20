@@ -129,7 +129,7 @@
       var table, checked = $(".typeCheck:checkbox:checked"); 
       if( checked.length > 0){ //If any checkboxes are checked
         for(var i = 0; i < checked.length; i++){
-          table += studentCollection.find({
+          table += entryCollection.find({
             type: checked[i]
           })
           printTable(table);
