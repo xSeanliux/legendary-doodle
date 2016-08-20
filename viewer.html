@@ -13,6 +13,7 @@
 <body>
   <h1 align="center">Prototype Viewer v. 0.0.1.7</h1>
   <div id= "total"><h3>Total: 0 </h3></div>
+  <canvas id = "can"></canvas>
   <button id = "latest10">Latest 10 Entries</button>
   <div class="col-x-9" align="right">
     <table class="table table-striped" id="stuffTable">
@@ -48,7 +49,7 @@
         total += parseInt(table[i].amount);
       }
       
-      
+    
       
       
       if(total < 0){
@@ -63,6 +64,55 @@
       
     }
     
+    function calculatePercentage(){
+      var table = entryCollection.find(), counter;
+      var typeArray = new Array(4); //two arrays (one here and one below), with lengths 4.
+      var percentagesArray = new Array(4); 
+      for(var i = 0;i < table.length; i++){
+        counter++; //how many in total; 
+      }
+      for(var j = 0; j < table.length; j++){
+        switch(table[j].type){
+          case "吃喝":
+            typeArray[0]++;
+          case "玩樂":
+            typeArray[1]++;
+          case "交通":
+            typeArray[2]++;
+          case "學業":
+            typeArray[3]++;
+        } //calculates how many in total.
+        
+      }
+      for(int k = 0; k < percentagesArray.length; k++){
+        percentagesArray[k] = (typeArray[k]/counter)*100; // gets the eat/total, fun/total and so forth. 
+      }
+      
+      
+      var canvas = document.getElementById("can");
+      var ctx = canvas.getContext("2d");
+      var lastend = 0;
+      // If you add more data values make sure you add more colors
+      var myTotal = 0; // Automatically calculated so don't touch
+      var myColor = ['red', 'green', 'blue']; // Colors of each slice
+      
+      for (var e = 0; e < typeArray.length; e++) {
+        myTotal += typeArray[e];
+      }
+      
+      for (var i = 0; i < data.length; i++) {
+        ctx.fillStyle = myColor[i];
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, canvas.height / 2);
+        // Arc Parameters: x, y, radius, startingAngle (radians), endingAngle (radians), antiClockwise (boolean)
+        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, lastend, lastend + (Math.PI * 2 * (data[i] / myTotal)), false);
+        ctx.lineTo(canvas.width / 2, canvas.height / 2);
+        ctx.fill();
+        lastend += Math.PI * 2 * (data[i] / myTotal);
+      }
+      
+      
+    }
    
     entryCollection.load(function (err) {
     if (!err) {
