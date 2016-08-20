@@ -126,7 +126,7 @@
     });
     
     $("#by_type").on("click", function(){
-      var table, checked = $(".typeCheck:checkbox:checked"); 
+      var table, checked = $("#type_checkbox:checkbox:checked"); 
       if( checked.length > 0){ //If any checkboxes are checked
         for(var i = 0; i < checked.length; i++){
           table += entryCollection.find({
