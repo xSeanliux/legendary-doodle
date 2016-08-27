@@ -14,28 +14,24 @@
   <h1 align="center" class = "version"></h1>
   
   <div class="col-x-5" align="centre">
-  <button type="button" class="btn btn-default" id="this_month">This Month</button>
-  <button type="button" class="btn btn-default" id="by_type">By Type</button>
+  <button type="button" class="btn btn-warning" id="this_month">This Month</button>
+  <button type="button" class="btn btn-warning" id="by_type">By Type</button>
+  <button type="button" class="btn btn-warning" id="dateSearchSubmit">By Date</button>
   <fieldset id = "type_checkbox">
     <label><input type="checkbox" value="吃喝" class = "typeCheck">吃喝</label>
     <label><input type="checkbox" value="玩樂" class = "typeCheck">玩樂</label>
     <label><input type="checkbox" value="交通" class = "typeCheck">交通</label>
     <label><input type="checkbox" value="學業" class = "typeCheck">學業</label>
   </fieldset>
-  <button type="button" class="btn btn-default">Default</button>
-  </div>
-  
-  
 
-  
-  <div class="col-x-3" align = "centre">
-  <button type="button" class="btn btn-default" id="dateSearchSubmit">By Date</button>
+
+  <div class="col-xs-3">
    <label for="date">Starting Date</label>
    <input type="date" class="form-control" id="startDate">
   
    <label for="endDate">End Date</label>
    <input type="date" class="form-control" id="endDate">
-   
+  </div> 
    
     
   </div>
@@ -65,7 +61,7 @@
   </div>
   
   <script>
-    var version = "Prototype Search Machine v.0.0.7";
+    var version = "Prototype Search Machine v.0.0.8";
     $(".version").html(version);
     
     entryCollection.load(function (err) {
