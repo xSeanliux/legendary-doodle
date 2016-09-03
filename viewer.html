@@ -17,8 +17,7 @@
   <button class="btn btn-warning col-md-12" id = "latest10">Latest 10 Entries</button>
   <div class="col-md-12"></div>
   <canvas id = "can" align="right" class="col-md-12"></canvas>
-  <div class="col-md-12">Key: Yellow: School; Blue: Transport; Red: Food; Green: Fun;</div>
-  
+  <canvas id = "key" align="right" class="col-md-12"></canvas>
   <div class="col-md-12" align="right">
     <table class="table table-striped" id="stuffTable">
       <thead>
@@ -88,9 +87,7 @@
         } //calculates how many in total.
         
       }
-      for(var k = 0; k < percentagesArray.length; k++){
-        percentagesArray[k] = (typeArray[k]/counter)*100; // gets the eat/total, fun/total and so forth. 
-      }
+      
       
       
       var canvas = document.getElementById("can");
@@ -100,20 +97,36 @@
       var myTotal = 0; // Automatically calculated so don't touch
       var myColor = ['red', 'green', 'blue','yellow']; // Colors of each slice
       
-      for (var e = 0; e < typeArray.length; e++) {
-        myTotal += typeArray[e];
+      for (var i = 0; i < typeArray.length; i++) {
+        myTotal += typeArray[i];
       }
       
       for (var i = 0; i < typeArray.length; i++) {
         ctx.fillStyle = myColor[i];
         ctx.beginPath();
         ctx.moveTo(canvas.width / 2, canvas.height / 2);
+        ctx.font = "30px Arial";
+        
         // Arc Parameters: x, y, radius, startingAngle (radians), endingAngle (radians), antiClockwise (boolean)
         ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2, lastend, lastend + (Math.PI * 2 * (typeArray[i] / myTotal)), false);
         ctx.lineTo(canvas.width / 2, canvas.height / 2);
         ctx.fill();
         lastend += Math.PI * 2 * (typeArray[i] / myTotal);
       }
+      var typeList = ["吃喝","玩樂","交通","學業"];
+      for(var i = 0; i < typeList.length, i++){
+        var canvas = document.getElementById("key");
+        var ctx = canvas.getContext("2d");
+        var lastX = 0; 
+        ctx.font = "30px Arial";
+        ctx.fillText(typeList[i]+": ",lastX,50);
+        lastX += 100;
+        ctx.fillStyle = myColor[i];
+        ctx.fillRect(lastX, 50, 20, 20);
+        lastX += 20; 
+      }
+      
+      
       
       
     }
