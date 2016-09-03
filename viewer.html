@@ -116,10 +116,10 @@
       var lastX = 0; 
       var typeList = ["吃喝","玩樂","交通","學業"];
       for(var j = 0; j < typeList.length; j++){
-        ctx.fillStyle = myColor[j];
+        
         var canvas = document.getElementById("key");
         var ctx = canvas.getContext("2d");
-        
+        ctx.fillStyle = myColor[j];
         ctx.font = "10px Arial";
         ctx.fillText(typeList[j]+": ",lastX,50);
         lastX += 50;
