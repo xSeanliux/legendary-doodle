@@ -119,9 +119,9 @@
         var canvas = document.getElementById("key");
         var ctx = canvas.getContext("2d");
         
-        ctx.font = "30px Arial";
+        ctx.font = "10px Arial";
         ctx.fillText(typeList[i]+": ",lastX,50);
-        lastX += 100;
+        lastX += 50;
         ctx.fillStyle = myColor[i];
         ctx.fillRect(lastX, 50, 20, 20);
         lastX += 20; 
