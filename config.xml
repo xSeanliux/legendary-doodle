@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.cubetopia.icash"
+    versionCode = "1"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>iCash</name>
+
+  <description>
+      This app will help you in your daily commute by managing your money! 
+  </description>
+
+  <author href="cubetopia.net" email="zhxnliu@gmail.com">
+      Sean Liu
+  </author>
+
+</widget>
